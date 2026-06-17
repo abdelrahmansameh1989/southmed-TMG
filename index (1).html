@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SouthMED — The Real Mediterranean</title>
+<!-- Google Ads Tag -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17515873563"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-17515873563');
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --sand:#e8dcc8;
+  --sand-dark:#c9b99a;
+  --sage:#4a6741;
+  --sage-light:#6a8f61;
+  --sage-pale:#d4e0d0;
+  --beige:#f4ede0;
+  --beige-deep:#ede0cc;
+  --soil:#2d2416;
+  --soil-mid:#4a3d28;
+  --white:#fdfaf6;
+  --text:#1e1a12;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--white);color:var(--text);overflow-x:hidden}
+
+/* ── NAV ── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 56px;height:68px;
+  background:rgba(253,250,246,0.92);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(45,36,22,0.08);
+}
+.nav-logo{font-family:'DM Serif Display',serif;font-size:20px;color:var(--soil);letter-spacing:1px}
+.nav-logo span{color:var(--sage)}
+.nav-menu{display:flex;gap:36px;list-style:none}
+.nav-menu a{font-size:11px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--soil-mid);text-decoration:none;transition:color .2s}
+.nav-menu a:hover{color:var(--sage)}
+.nav-cta{
+  background:var(--sage);color:#fff;
+  padding:10px 26px;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;
+  border:none;cursor:pointer;border-radius:2px;transition:background .2s;
+}
+.nav-cta:hover{background:var(--sage-light)}
+
+/* ── HERO ── */
+.hero{
+  height:100vh;min-height:700px;
+  display:grid;grid-template-columns:1fr 1fr;
+  padding-top:68px;
+}
+.hero-left{
+  background:var(--soil);
+  display:flex;flex-direction:column;justify-content:flex-end;
+  padding:72px 64px;
+  position:relative;overflow:hidden;
+}
+.hero-left::before{
+  content:'';position:absolute;top:-80px;right:-80px;
+  width:400px;height:400px;
+  border-radius:50%;
+  background:var(--sage);opacity:0.12;
+}
+.hero-tag{
+  display:inline-flex;align-items:center;gap:10px;
+  font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;
+  color:var(--sand);margin-bottom:28px;
+}
+.hero-tag::before{content:'';width:32px;height:1px;background:var(--sand-dark)}
+.hero-title{
+  font-family:'DM Serif Display',serif;
+  font-size:clamp(64px,7vw,100px);
+  font-weight:400;line-height:.95;
+  color:var(--white);
+  margin-bottom:8px;
+}
+.hero-title em{color:var(--sand);font-style:italic;display:block}
+.hero-subtitle{
+  font-size:13px;font-weight:300;letter-spacing:3px;text-transform:uppercase;
+  color:rgba(232,220,200,0.55);margin:20px 0 40px;
+}
+.hero-phone{
+  display:inline-flex;align-items:center;gap:14px;
+  background:var(--sage);color:#fff;
+  padding:16px 28px;text-decoration:none;
+  font-size:16px;font-weight:700;letter-spacing:2px;
+  border-radius:2px;align-self:flex-start;
+}
+.hero-phone span{font-size:10px;font-weight:400;letter-spacing:3px;text-transform:uppercase;opacity:.75;display:block}
+.hero-right{
+  position:relative;overflow:hidden;
+}
+.hero-right img{
+  width:100%;height:100%;object-fit:cover;
+  filter:saturate(0.85);
+}
+.hero-scroll{
+  position:absolute;bottom:36px;left:50%;transform:translateX(-50%);
+  display:flex;flex-direction:column;align-items:center;gap:8px;
+  font-size:9px;letter-spacing:3px;text-transform:uppercase;color:#fff;opacity:.6;
+}
+.hero-scroll::after{content:'';width:1px;height:40px;background:#fff;opacity:.4}
+
+/* ── NUMBERS BAR ── */
+.numbers-bar{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  background:var(--beige);
+  border-top:3px solid var(--sage);
+}
+.num-item{
+  padding:40px 36px;
+  border-right:1px solid var(--beige-deep);
+}
+.num-item:last-child{border-right:none}
+.num-big{
+  font-family:'DM Serif Display',serif;
+  font-size:52px;font-weight:400;
+  color:var(--soil);line-height:1;
+}
+.num-big sup{font-size:22px;vertical-align:super}
+.num-label{font-size:10px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:var(--sage);margin-top:8px}
+.num-desc{font-size:12px;color:#8a7d6a;margin-top:4px;font-weight:300}
+
+/* ── INTRO SECTION ── */
+.intro{
+  display:grid;grid-template-columns:5fr 7fr;
+  min-height:600px;
+}
+.intro-text{
+  background:var(--white);
+  padding:100px 72px;
+  display:flex;flex-direction:column;justify-content:center;
+}
+.eyebrow{
+  font-size:10px;font-weight:700;letter-spacing:4px;text-transform:uppercase;
+  color:var(--sage);margin-bottom:20px;
+  display:flex;align-items:center;gap:12px;
+}
+.eyebrow::before{content:'';width:24px;height:2px;background:var(--sage)}
+.big-heading{
+  font-family:'DM Serif Display',serif;
+  font-size:clamp(34px,3.5vw,52px);
+  font-weight:400;line-height:1.15;
+  color:var(--soil);margin-bottom:28px;
+}
+.big-heading em{color:var(--sage);font-style:italic}
+.body-text{font-size:14px;font-weight:300;line-height:1.95;color:#6b5f4e;max-width:420px}
+.intro-visual{
+  position:relative;overflow:hidden;background:var(--beige-deep);
+}
+.intro-visual img{width:100%;height:100%;object-fit:cover}
+.intro-badge{
+  position:absolute;bottom:40px;left:-1px;
+  background:var(--sage);color:#fff;
+  padding:20px 32px;
+  font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;
+  line-height:1.6;
+}
+.intro-badge strong{font-family:'DM Serif Display',serif;font-size:28px;font-weight:400;display:block;letter-spacing:0}
+
+/* ── FACILITIES ── */
+.facilities{padding:100px 64px;background:var(--white)}
+.fac-header{
+  display:flex;align-items:flex-end;justify-content:space-between;
+  margin-bottom:64px;
+}
+.fac-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:2px;
+  background:var(--sand-dark);
+}
+.fac-item{
+  background:var(--white);
+  padding:44px 32px;
+  cursor:default;
+  transition:background .3s,transform .3s;
+  border-bottom:3px solid transparent;
+}
+.fac-item:hover{background:var(--soil);border-bottom-color:var(--sage)}
+.fac-item:hover .fac-name{color:#fff}
+.fac-item:hover .fac-desc{color:rgba(255,255,255,.5)}
+.fac-item:hover .fac-icon{color:var(--sand)}
+.fac-icon{font-size:28px;margin-bottom:20px;color:var(--sage);display:block;line-height:1}
+.fac-name{font-size:14px;font-weight:600;color:var(--soil);margin-bottom:10px;transition:color .3s}
+.fac-desc{font-size:12px;color:#9a8d7a;line-height:1.75;font-weight:300;transition:color .3s}
+
+/* ── FULL BLEED QUOTE ── */
+.quote-section{
+  background:var(--sage);
+  padding:100px 80px;
+  display:flex;align-items:center;justify-content:center;
+  text-align:center;
+}
+.quote-inner{max-width:820px}
+.quote-mark{font-family:'DM Serif Display',serif;font-size:120px;line-height:.6;color:rgba(255,255,255,.15);display:block;margin-bottom:8px}
+.quote-text{
+  font-family:'DM Serif Display',serif;
+  font-size:clamp(26px,3.5vw,42px);
+  font-weight:400;font-style:italic;
+  color:#fff;line-height:1.4;
+  margin-bottom:32px;
+}
+.quote-line{width:60px;height:2px;background:var(--sand);margin:0 auto 24px}
+.quote-sub{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.55);font-weight:500}
+
+/* ── UNITS ── */
+.units{padding:100px 64px;background:var(--beige)}
+.units-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:3px;
+  margin-top:56px;
+  background:var(--beige-deep);
+}
+.unit-card{
+  position:relative;overflow:hidden;
+  aspect-ratio:3/4;
+  cursor:pointer;
+}
+.unit-card img{width:100%;height:100%;object-fit:cover;transition:transform .5s;filter:brightness(.9)}
+.unit-card:hover img{transform:scale(1.06)}
+.unit-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(to top, rgba(29,22,10,.82) 0%, transparent 55%);
+  display:flex;flex-direction:column;justify-content:flex-end;
+  padding:32px 28px;
+}
+.unit-tag{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--sand);font-weight:600;margin-bottom:6px}
+.unit-name{font-family:'DM Serif Display',serif;font-size:24px;color:#fff;font-weight:400}
+.unit-arrow{
+  position:absolute;top:24px;right:24px;
+  width:36px;height:36px;border:1px solid rgba(255,255,255,.3);
+  display:flex;align-items:center;justify-content:center;
+  color:#fff;font-size:16px;
+  opacity:0;transition:opacity .3s;
+}
+.unit-card:hover .unit-arrow{opacity:1}
+
+/* ── LOCATION ── */
+.location{
+  display:grid;grid-template-columns:1fr 1fr;
+  min-height:520px;
+}
+.loc-map{background:#d4cfc5;overflow:hidden}
+.loc-map iframe{width:100%;height:100%;border:none;filter:saturate(.7) contrast(1.1)}
+.loc-info{
+  background:var(--soil);
+  padding:80px 64px;
+  display:flex;flex-direction:column;justify-content:center;
+}
+.loc-info .eyebrow{color:var(--sand-dark)}
+.loc-info .big-heading{color:var(--white)}
+.loc-info .big-heading em{color:var(--sand)}
+.loc-points{margin-top:36px;display:flex;flex-direction:column;gap:0}
+.loc-point{
+  display:flex;gap:20px;align-items:flex-start;
+  padding:20px 0;border-bottom:1px solid rgba(255,255,255,.08);
+}
+.loc-num{
+  font-family:'DM Serif Display',serif;font-size:32px;color:var(--sand-dark);
+  line-height:1;flex-shrink:0;width:44px;
+}
+.loc-detail strong{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--sand);display:block;margin-bottom:4px}
+.loc-detail p{font-size:13px;color:rgba(255,255,255,.45);font-weight:300;line-height:1.6}
+
+/* ── CONTACT ── */
+.contact{
+  display:grid;grid-template-columns:1fr 1fr;
+  background:var(--beige);
+}
+.contact-left{
+  padding:90px 72px;
+  display:flex;flex-direction:column;justify-content:center;
+}
+.phone-display{
+  font-family:'DM Serif Display',serif;
+  font-size:clamp(36px,4vw,54px);
+  color:var(--soil);
+  margin:16px 0 8px;
+  line-height:1;
+}
+.phone-display a{color:inherit;text-decoration:none}
+.phone-display a:hover{color:var(--sage)}
+.phone-note{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--sage);font-weight:600}
+.address-block{
+  margin-top:40px;padding-top:32px;
+  border-top:1px solid var(--sand-dark);
+  font-size:13px;color:#8a7d6a;line-height:2;font-weight:300;
+}
+.contact-form{
+  background:var(--soil);
+  padding:90px 72px;
+  display:flex;flex-direction:column;justify-content:center;
+}
+.form-title{font-family:'DM Serif Display',serif;font-size:32px;color:#fff;margin-bottom:36px;font-weight:400}
+.f-group{display:flex;flex-direction:column;gap:6px;margin-bottom:16px}
+.f-group label{font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,.4);font-weight:500}
+.f-group input,.f-group select{
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.12);
+  color:#fff;padding:13px 16px;
+  font-size:13px;font-family:'Inter',sans-serif;
+  outline:none;transition:border-color .2s;
+  border-radius:2px;
+}
+.f-group input::placeholder{color:rgba(255,255,255,.25)}
+.f-group input:focus,.f-group select:focus{border-color:var(--sage-light)}
+.f-group select option{background:#2d2416}
+.f-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.f-submit{
+  background:var(--sage);color:#fff;border:none;
+  padding:15px;font-size:11px;font-weight:700;letter-spacing:3px;
+  text-transform:uppercase;cursor:pointer;font-family:'Inter',sans-serif;
+  margin-top:8px;border-radius:2px;transition:background .2s;
+}
+.f-submit:hover{background:var(--sage-light)}
+
+/* ── FOOTER ── */
+footer{
+  background:var(--soil);
+  border-top:3px solid var(--sage);
+  padding:48px 64px;
+  display:flex;align-items:center;justify-content:space-between;
+  flex-wrap:wrap;gap:24px;
+}
+.foot-logo{font-family:'DM Serif Display',serif;font-size:22px;color:var(--white)}
+.foot-logo span{color:var(--sand)}
+.foot-links{display:flex;gap:32px;flex-wrap:wrap}
+.foot-links a{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.35);text-decoration:none;transition:color .2s}
+.foot-links a:hover{color:var(--sand)}
+.foot-right{text-align:right}
+.foot-hotline{font-size:18px;font-weight:700;color:var(--sand);letter-spacing:2px}
+.foot-hotline a{color:inherit;text-decoration:none}
+.foot-copy{font-size:11px;color:rgba(255,255,255,.25);margin-top:4px}
+
+/* ── FLOATING CONTACT BUTTONS ── */
+.float-btns{
+  position:fixed;
+  bottom:32px;right:32px;
+  z-index:999;
+  display:flex;flex-direction:column;
+  align-items:flex-end;
+  gap:14px;
+}
+
+/* Labels */
+.float-btn-wrap{
+  display:flex;align-items:center;gap:12px;
+}
+.float-label{
+  font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;
+  color:#fff;
+  background:rgba(29,22,10,0.72);
+  backdrop-filter:blur(8px);
+  padding:6px 14px;
+  border-radius:30px;
+  opacity:0;
+  transform:translateX(10px);
+  transition:opacity .3s ease, transform .3s ease;
+  white-space:nowrap;
+  pointer-events:none;
+}
+.float-btn-wrap:hover .float-label{
+  opacity:1;
+  transform:translateX(0);
+}
+
+/* Buttons */
+.float-btn{
+  width:58px;height:58px;
+  border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  text-decoration:none;
+  box-shadow:0 6px 28px rgba(0,0,0,0.22);
+  transition:transform .3s cubic-bezier(.34,1.56,.64,1), box-shadow .3s ease;
+  flex-shrink:0;
+  position:relative;
+}
+.float-btn:hover{
+  transform:scale(1.12);
+  box-shadow:0 10px 36px rgba(0,0,0,0.3);
+}
+
+/* Pulse ring */
+.float-btn::before{
+  content:'';
+  position:absolute;inset:-4px;
+  border-radius:50%;
+  border:2px solid currentColor;
+  opacity:0;
+  animation:pulse-ring 2.8s ease-out infinite;
+}
+.float-btn-call{background:var(--sage);color:var(--sage)}
+.float-btn-wa{background:#25d366;color:#25d366}
+
+@keyframes pulse-ring{
+  0%{transform:scale(1);opacity:.5}
+  70%{transform:scale(1.45);opacity:0}
+  100%{opacity:0}
+}
+
+/* SVG icons inside */
+.float-btn svg{
+  width:26px;height:26px;
+  fill:#fff;
+  flex-shrink:0;
+}
+
+/* Entry animation */
+.float-btn-wrap:nth-child(1){animation:float-in .5s .1s cubic-bezier(.34,1.56,.64,1) both}
+.float-btn-wrap:nth-child(2){animation:float-in .5s .25s cubic-bezier(.34,1.56,.64,1) both}
+@keyframes float-in{
+  from{opacity:0;transform:translateY(20px) scale(.8)}
+  to{opacity:1;transform:translateY(0) scale(1)}
+}
+
+@media(max-width:900px){
+  .float-btns{bottom:24px;right:20px;gap:12px}
+  .float-btn{width:52px;height:52px}
+  .float-btn svg{width:22px;height:22px}
+  .float-label{display:none}
+}
+
+@media(max-width:900px){
+  nav{padding:0 24px}
+  .nav-menu{display:none}
+  .hero{grid-template-columns:1fr;height:auto}
+  .hero-right{height:55vw}
+  .hero-left{padding:48px 28px 56px}
+  .numbers-bar{grid-template-columns:1fr 1fr}
+  .intro{grid-template-columns:1fr}
+  .intro-text{padding:64px 28px}
+  .fac-grid{grid-template-columns:1fr 1fr}
+  .facilities{padding:64px 28px}
+  .units{padding:64px 28px}
+  .units-grid{grid-template-columns:1fr 1fr}
+  .location{grid-template-columns:1fr}
+  .loc-map{height:300px}
+  .loc-info{padding:56px 28px}
+  .contact{grid-template-columns:1fr}
+  .contact-left,.contact-form{padding:64px 28px}
+  footer{padding:40px 28px;flex-direction:column;text-align:center}
+  .foot-right{text-align:center}
+  .quote-section{padding:72px 28px}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">TMG</div>
+  <ul class="nav-menu">
+    <li><a href="#intro">Overview</a></li>
+    <li><a href="#facilities">Facilities</a></li>
+    <li><a href="#units">Units</a></li>
+    <li><a href="#location">Location</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <button class="nav-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Register Interest</button>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <span class="hero-tag">North Coast · Kilo 165</span>
+    <h1 class="hero-title">South<em>MED</em></h1>
+    <p class="hero-subtitle">The Real Mediterranean</p>
+    <a href="tel:01200010991" class="hero-phone" onclick="gtag('event','conversion',{'send_to':'AW-17515873563/t42NCN_jyJMbEJuKnKBB'}); gtag('event','phone_call_click',{'event_category':'engagement','event_label':'hero_call'});">
+      <div>
+        <span>Sales Hotline</span>
+        01200010991
+      </div>
+    </a>
+  </div>
+  <div class="hero-right">
+    <img src="https://talaatmoustafa.com/wp-content/uploads/2024/06/03-Marina-tower-scaled.jpg" alt="SouthMED Marina" onerror="this.parentElement.style.background='#4a6741'">
+    <div class="hero-scroll">Scroll</div>
+  </div>
+</section>
+
+<!-- NUMBERS -->
+<div class="numbers-bar">
+  <div class="num-item">
+    <div class="num-big">23<sup>M</sup></div>
+    <div class="num-label">Square Meters</div>
+    <div class="num-desc">Total project area</div>
+  </div>
+  <div class="num-item">
+    <div class="num-big">8</div>
+    <div class="num-label">KM Beach</div>
+    <div class="num-desc">Pristine coastline</div>
+  </div>
+  <div class="num-item">
+    <div class="num-big">18</div>
+    <div class="num-label">Min to Airport</div>
+    <div class="num-desc">Al Alamein Int'l</div>
+  </div>
+  <div class="num-item">
+    <div class="num-big">2–5</div>
+    <div class="num-label">Hours by Flight</div>
+    <div class="num-desc">From Europe & Gulf</div>
+  </div>
+</div>
+
+<!-- INTRO -->
+<section class="intro" id="intro">
+  <div class="intro-text">
+    <p class="eyebrow">A New Global Destination</p>
+    <h2 class="big-heading">Where the<br>Mediterranean<br><em>Begins Again</em></h2>
+    <p class="body-text">An internationally designed, fully integrated development rising on Egypt's North Coast. SouthMED offers a world-class lifestyle with crystal lagoons, a world-class marina, pristine beaches, and an 18-hole golf course — all in one seamlessly connected destination.</p>
+  </div>
+  <div class="intro-visual">
+    <img src="https://talaatmoustafa.com/wp-content/uploads/2024/06/03-Marina-tower-scaled.jpg" alt="SouthMED" onerror="this.parentElement.style.background='#c9b99a'">
+    <div class="intro-badge">
+      <strong>Kilo 165</strong>
+      Alexandria–Matrouh Road
+    </div>
+  </div>
+</section>
+
+<!-- FACILITIES -->
+<section class="facilities" id="facilities">
+  <div class="fac-header">
+    <div>
+      <p class="eyebrow">Explore Our Facilities</p>
+      <h2 class="big-heading" style="margin:0">An All-Season<br><em>Destination</em></h2>
+    </div>
+  </div>
+  <div class="fac-grid">
+    <div class="fac-item">
+      <span class="fac-icon">⚓</span>
+      <div class="fac-name">The Marina</div>
+      <div class="fac-desc">World-class yacht facility with state-of-the-art amenities, fine dining and entertainment hub.</div>
+    </div>
+    <div class="fac-item">
+      <span class="fac-icon">🌊</span>
+      <div class="fac-name">Pristine Beach</div>
+      <div class="fac-desc">8 km of untouched North Coast shoreline — crystal water, golden sands, all yours.</div>
+    </div>
+    <div class="fac-item">
+      <span class="fac-icon">💎</span>
+      <div class="fac-name">Crystal Lagoons</div>
+      <div class="fac-desc">Swimmable lagoons surrounded by lush greenery for yoga, strolls and evening gatherings.</div>
+    </div>
+    <div class="fac-item">
+      <span class="fac-icon">⛳</span>
+      <div class="fac-name">Golf Course</div>
+      <div class="fac-desc">18-hole world-class course with panoramic sea views along the pristine coastline.</div>
+    </div>
+    <div class="fac-item">
+      <span class="fac-icon">🏨</span>
+      <div class="fac-name">Hospitality</div>
+      <div class="fac-desc">Boutique to luxury marina hotels — a curated stay for every lifestyle and preference.</div>
+    </div>
+    <div class="fac-item">
+      <span class="fac-icon">🛍</span>
+      <div class="fac-name">Shopping & Dining</div>
+      <div class="fac-desc">Open-air mall, F&B village, international brands, theme park and Mediterranean cuisine.</div>
+    </div>
+    <div class="fac-item">
+      <span class="fac-icon">🌿</span>
+      <div class="fac-name">Wellness</div>
+      <div class="fac-desc">Luxury spa, wellness retreats and top-tier healthcare within the community.</div>
+    </div>
+    <div class="fac-item">
+      <span class="fac-icon">☀️</span>
+      <div class="fac-name">Smart & Green</div>
+      <div class="fac-desc">Solar energy integration and smart infrastructure for a sustainable future.</div>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE -->
+<div class="quote-section">
+  <div class="quote-inner">
+    <span class="quote-mark">"</span>
+    <p class="quote-text">Every season brings a world of possibilities — coastal beauty, warm sun, and a lifestyle unlike anything else on the Mediterranean.</p>
+    <div class="quote-line"></div>
+    <p class="quote-sub">SouthMED · North Coast · Egypt</p>
+  </div>
+</div>
+
+<!-- UNITS -->
+<section class="units" id="units">
+  <p class="eyebrow">Model Types</p>
+  <h2 class="big-heading" style="margin-top:0">Choose Your<br><em>Perfect Unit</em></h2>
+  <div class="units-grid">
+    <div class="unit-card">
+      <img src="https://talaatmoustafa.com/wp-content/uploads/2024/06/villa-type-1.png" alt="Villa 1" onerror="this.style.background='#c9b99a';this.style.height='100%';this.removeAttribute('src')">
+      <div class="unit-overlay">
+        <div class="unit-tag">Villa</div>
+        <div class="unit-name">Villa Type 1</div>
+      </div>
+      <div class="unit-arrow">→</div>
+    </div>
+    <div class="unit-card">
+      <img src="https://talaatmoustafa.com/wp-content/uploads/2024/06/villa-type-2.jpg" alt="Villa 2" onerror="this.style.background='#b0a088';this.style.height='100%';this.removeAttribute('src')">
+      <div class="unit-overlay">
+        <div class="unit-tag">Villa</div>
+        <div class="unit-name">Villa Type 2</div>
+      </div>
+      <div class="unit-arrow">→</div>
+    </div>
+    <div class="unit-card">
+      <img src="https://talaatmoustafa.com/wp-content/uploads/2024/06/villa-type-3.png" alt="Villa 3" onerror="this.style.background='#9a8a70';this.style.height='100%';this.removeAttribute('src')">
+      <div class="unit-overlay">
+        <div class="unit-tag">Villa</div>
+        <div class="unit-name">Villa Type 3</div>
+      </div>
+      <div class="unit-arrow">→</div>
+    </div>
+    <div class="unit-card">
+      <img src="https://talaatmoustafa.com/wp-content/uploads/2024/06/chalet-type-a.png" alt="Chalet A" onerror="this.style.background='#7a8a68';this.style.height='100%';this.removeAttribute('src')">
+      <div class="unit-overlay">
+        <div class="unit-tag">Chalet</div>
+        <div class="unit-name">Chalet Type A</div>
+      </div>
+      <div class="unit-arrow">→</div>
+    </div>
+    <div class="unit-card">
+      <img src="https://talaatmoustafa.com/wp-content/uploads/2024/06/chalet-type-b.png" alt="Chalet B" onerror="this.style.background='#6a7a58';this.style.height='100%';this.removeAttribute('src')">
+      <div class="unit-overlay">
+        <div class="unit-tag">Chalet</div>
+        <div class="unit-name">Chalet Type B</div>
+      </div>
+      <div class="unit-arrow">→</div>
+    </div>
+    <div class="unit-card">
+      <img src="https://talaatmoustafa.com/wp-content/uploads/2024/06/marinaa-aprtments.png" alt="Marina" onerror="this.style.background='#4a6741';this.style.height='100%';this.removeAttribute('src')">
+      <div class="unit-overlay">
+        <div class="unit-tag">Apartment</div>
+        <div class="unit-name">Marina Apartments</div>
+      </div>
+      <div class="unit-arrow">→</div>
+    </div>
+  </div>
+</section>
+
+<!-- LOCATION -->
+<section class="location" id="location">
+  <div class="loc-map">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d54977.1!2d28.01!3d30.83!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14f7c44cf978ff0b%3A0x1!2sSouthMED+North+Coast!5e0!3m2!1sen!2seg!4v1" allowfullscreen loading="lazy"></iframe>
+  </div>
+  <div class="loc-info">
+    <p class="eyebrow">Prime Location</p>
+    <h2 class="big-heading">Kilo 165,<br><em>North Coast</em></h2>
+    <div class="loc-points">
+      <div class="loc-point">
+        <div class="loc-num">18'</div>
+        <div class="loc-detail">
+          <strong>Al Alamein International Airport</strong>
+          <p>Seamless travel connections for residents and visitors</p>
+        </div>
+      </div>
+      <div class="loc-point">
+        <div class="loc-num">165</div>
+        <div class="loc-detail">
+          <strong>KM on Alexandria–Matrouh Road</strong>
+          <p>Easy access from Cairo and Alexandria</p>
+        </div>
+      </div>
+      <div class="loc-point">
+        <div class="loc-num">2–5</div>
+        <div class="loc-detail">
+          <strong>Hours from Europe & Gulf</strong>
+          <p>True global proximity by flight</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="contact-left">
+    <p class="eyebrow">Get In Touch</p>
+    <h2 class="big-heading">Register Your<br><em>Interest</em></h2>
+    <div class="phone-display"><a href="tel:01200010991" onclick="gtag('event','conversion',{'send_to':'AW-17515873563/t42NCN_jyJMbEJuKnKBB'}); gtag('event','phone_call_click',{'event_category':'engagement','event_label':'contact_call'});">01200010991</a></div>
+    <p class="phone-note">Sales Hotline — Available Now</p>
+    <div class="address-block">
+      Talaat Moustafa Group<br>
+      34/36 Musadak St., Cairo Head Office<br>
+      © 2024 All Rights Reserved
+    </div>
+  </div>
+  <div class="contact-form">
+    <div class="form-title">Let's Talk</div>
+    <div class="f-row">
+      <div class="f-group"><label>Name</label><input type="text" placeholder="Full Name"></div>
+      <div class="f-group"><label>Phone</label><input type="tel" placeholder="+20 12 0001 0991"></div>
+    </div>
+    <div class="f-row">
+      <div class="f-group"><label>Email</label><input type="email" placeholder="your@email.com"></div>
+      <div class="f-group"><label>City</label><input type="text" placeholder="Your City"></div>
+    </div>
+    <div class="f-group">
+      <label>Project</label>
+      <select>
+        <option>SouthMED</option>
+        <option>Madinaty</option>
+        <option>Noor Smart City</option>
+        <option>Celia – New Capital</option>
+        <option>Privado</option>
+      </select>
+    </div>
+    <button class="f-submit" onclick="gtag('event','conversion',{'send_to':'AW-17515873563/t42NCN_jyJMbEJuKnKBB'}); gtag('event','form_submit',{'event_category':'engagement','event_label':'contact_form'}); this.textContent='✓ Received — We\'ll be in touch soon!'">Submit Request</button>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-logo">South<span>MED</span></div>
+  <div class="foot-links">
+    <a href="#">TMG Group</a>
+    <a href="#">Communities</a>
+    <a href="#">Hospitality</a>
+    <a href="#">Investor Relations</a>
+    <a href="#">Contact</a>
+  </div>
+  <div class="foot-right">
+    <div class="foot-hotline"><a href="tel:01200010991" onclick="gtag('event','conversion',{'send_to':'AW-17515873563/t42NCN_jyJMbEJuKnKBB'}); gtag('event','phone_call_click',{'event_category':'engagement','event_label':'footer_call'});">01200010991</a></div>
+    <div class="foot-copy">© 2024 Talaat Moustafa Group</div>
+  </div>
+</footer>
+
+<!-- FLOATING CONTACT BUTTONS -->
+<div class="float-btns">
+
+  <!-- WhatsApp -->
+  <div class="float-btn-wrap">
+    <span class="float-label">WhatsApp</span>
+    <a href="https://wa.me/201200010991" target="_blank" class="float-btn float-btn-wa" aria-label="WhatsApp"
+      onclick="gtag('event','conversion',{'send_to':'AW-17515873563/t42NCN_jyJMbEJuKnKBB'}); gtag('event','whatsapp_click',{'event_category':'engagement','event_label':'whatsapp'});">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+      </svg>
+    </a>
+  </div>
+
+  <!-- Call -->
+  <div class="float-btn-wrap">
+    <span class="float-label">اتصل بنا</span>
+    <a href="tel:01200010991" class="float-btn float-btn-call" aria-label="Call Us"
+      onclick="gtag('event','conversion',{'send_to':'AW-17515873563/t42NCN_jyJMbEJuKnKBB'}); gtag('event','phone_call_click',{'event_category':'engagement','event_label':'call'});">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+      </svg>
+    </a>
+  </div>
+
+</div>
+
+</body>
+</html>
